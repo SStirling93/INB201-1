@@ -12,10 +12,12 @@ namespace WindowsFormsApplication1
     public partial class Personnel_Management : Form
     {
          mainform parent;
+         DBConnect DB;
 
         public Personnel_Management(mainform parent)
         {
             InitializeComponent();
+            DB = new DBConnect();
 
             this.parent = parent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -44,6 +46,12 @@ namespace WindowsFormsApplication1
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            DB.Insert_personnel();
+            
+            
         }
     }
 }

@@ -16,7 +16,7 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1 {
 
-    class DBConnect {
+    public class DBConnect {
 
 
 
@@ -140,17 +140,29 @@ namespace WindowsFormsApplication1 {
 
 
 
-        //Insert statement
-
-
             //Insert statement
             public void Insert_personnel()
             {
+                //Account table columns
+                string F_name = "no";
+                string M_name = "name";
+                string L_name = "given";
+                string Address = "42 Address";
+                string Gender = "male";
+                string Email = "email.com";
+                string City = "City";
+                string Password = "password";
+                string Access_Level = "Default";
+                int Account_ID = 231633;
+                int Phone = 32887777;
+                int Postcode = 4300;
+                
+
                /*`Password` , `Access_Level`,  `F_name` ,  `L_name`,  `M_name`,  `Phone`  ,  `Address`,
   `City` ,  `PostCode`,  `gender` ,  `email`,  `AccountCode` )*/
                 string query = 
- "INSERT INTO personnel (password, Access_Level, F_name, L_name, M_Name, Phone, Address, City, PostCode, gender, email, AccountCode) VALUES (MD5(''), '','','','','','','','','','','')";
-
+ "INSERT INTO personnel (password, Access_Level, F_name, L_name, M_Name, Phone, Address, City, PostCode, gender, email, AccountCode) VALUES (MD5('"+Password+"'), '"+Access_Level+"','"+F_name+"','"+L_name+"','"+M_name+"','"+Phone+"','"+Address+"','"+City+"','"+Postcode+"','"+Gender+"','"+Email+"','"+Account_ID+"')";
+                MessageBox.Show(query);
                 //open connection
                 if (this.OpenConnection() == true)
                 {
